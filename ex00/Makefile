@@ -16,7 +16,7 @@ CXX = c++
 
 CXXFLAGS = -Wall -Wextra -Werror
 
-SRCS = ex00.cpp
+SRCS = main.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 

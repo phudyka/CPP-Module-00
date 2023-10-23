@@ -6,19 +6,21 @@
 #    By: phudyka <phudyka@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/23 11:49:28 by phudyka           #+#    #+#              #
-#    Updated: 2023/10/23 13:25:28 by phudyka          ###   ########.fr        #
+#    Updated: 2023/10/23 14:55:31 by phudyka          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-TARGET = PhoneBook 
+TARGET		= PhoneBook 
 
-CXX = c++
+CXX 		= c++
 
-CXXFLAGS = -Wall -Wextra -Werror
+CXXFLAGS	= -Wall -Wextra -Werror
 
-SRCS = ex01.cpp
+SRCS		= main.cpp \
 
-OBJS = $(SRCS:.cpp=.o)
+OBJS		= $(SRCS:.cpp=.o)
+
+DEPS		= main.hpp \
 
 .PHONY: all clean fclean re
 
