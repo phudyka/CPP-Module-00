@@ -6,7 +6,7 @@
 /*   By: phudyka <phudyka@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 13:22:30 by phudyka           #+#    #+#             */
-/*   Updated: 2023/10/26 12:05:51 by phudyka          ###   ########.fr       */
+/*   Updated: 2023/10/26 15:16:51 by phudyka          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 # include <algorithm>
 
 # define RESET		"\033[0m"
+# define BOLD		"\033[1m"
 # define ORANGE1	"\033[38;5;208m"
 # define ORANGE2	"\033[38;5;202m"
 # define RED		"\033[1;31m"
@@ -29,9 +30,9 @@ using namespace std;
 
 void	ft_awesome(void);
 void	ft_command(void);
-void	ft_name(string first, string last, string nick);
-void	ft_phone(string phone);
-void	ft_secret(string secret);
+int		ft_name(string first, string last, string nick);
+int		ft_phone(string phone);
+int		ft_secret(string secret);
 void	ft_error(int code);
 void	ft_exit(void);
 class Contact
@@ -59,16 +60,24 @@ public:
         cout << setw(10) << nick.substr(0, 10) << "|" << RESET << endl;
 	}
 
-	void	displayDetails(void) const
+	void displayDetails(void) const
 	{
-        cout << ORANGE1 << ".:First Name: " << first << endl;
-        cout << ".:Last Name: " << last << endl;
-        cout << ".:Nickname: " << nick << endl;
-		cout << ".:Phone Number: " << phone << endl;
-        cout << ".:" << RESET;
-		cout << PURPLE << "Darkest Secret" << RESET;
-		cout << ORANGE1 << ": " << secret << RESET << endl;
-    }
+ 	   cout << ORANGE1 << ".:" << RESET;
+	   cout << ORANGE2 << BOLD << "First Name" << RESET;
+	   cout << ORANGE1 << ": " << first << endl;
+	   cout << ORANGE1 << ".:" << RESET;
+	   cout << ORANGE2 << BOLD << "Last Name" << RESET;
+	   cout << ORANGE1 << ": " << last << endl;
+	   cout << ORANGE1 << ".:" << RESET;
+	   cout << ORANGE2 << BOLD << "Nickname" << RESET;
+	   cout << ORANGE1 << ": " << nick << endl;
+	   cout << ORANGE1 << ".:" << RESET;
+	   cout << ORANGE2 << BOLD << "Phone Number" << RESET;
+	   cout << ORANGE1 << ": " << phone << endl;
+	   cout << ".:" << BOLD << PURPLE << "Darkest Secret" << RESET << ": " << secret << endl;
+	   cout << ".:" << RESET << endl;
+	}
+
 };
 
 class PhoneBook
@@ -95,11 +104,15 @@ public:
 
     void	displayTab() const
 	{
-		cout << ORANGE1 << "|:" << RESET;
-		cout << ORANGE2 << "INDEX| FIRST | LAST | NICK " << RESET;
+		cout << ORANGE1 << "+============[";
+		cout << BOLD << "SEARCHING" << RESET;
+		cout << ORANGE1 << "]=============+" << endl;
+		cout << "|:" << RESET;
+		cout << ORANGE2 << BOLD << "...[ N° | FIRST | LAST | NICK ]..." << RESET;
 		cout <<  ORANGE1 << ":" << "|" << RESET << endl;
         for (int i = 0; i < index; ++i)
 			tab[i].displayBook(i);
+		cout << ORANGE1 << "+====================================+" << RESET << endl;
     }
 
     void	searchContact(int i) const
