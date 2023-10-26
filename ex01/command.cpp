@@ -6,7 +6,7 @@
 /*   By: phudyka <phudyka@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 12:03:09 by phudyka           #+#    #+#             */
-/*   Updated: 2023/10/26 18:11:59 by phudyka          ###   ########.fr       */
+/*   Updated: 2023/10/26 18:31:16 by phudyka          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,14 +41,15 @@ int	ft_name(string &first, string &last, string &nick)
 
 int	ft_phone(string &phone)
 {
-    while (phone.empty() || phone.find_first_not_of(num)!= string::npos || phone.length() < 10)
+    while (phone.empty() || phone.find_first_not_of(num)!= string::npos
+		|| phone.length() < 5 || phone.length() > 15)
     {
         cout << ORANGE1 << "|.:Enter a ";
 		cout << BOLD << ORANGE2 << "Phone Number: " << RESET;
         getline(cin, phone);
         if (phone.find_first_not_of(num) != string::npos)
 			ft_error(4);
-		if (phone.length() < 10)
+		if (phone.length() < 5 || phone.length() > 15)
 			ft_error(5);	
     }
 	return (1);

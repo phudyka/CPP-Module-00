@@ -6,7 +6,7 @@
 /*   By: phudyka <phudyka@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 13:22:30 by phudyka           #+#    #+#             */
-/*   Updated: 2023/10/26 18:13:17 by phudyka          ###   ########.fr       */
+/*   Updated: 2023/10/26 18:41:32 by phudyka          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,15 +54,16 @@ public:
 		const string &nickInit, const string &phoneInit, const string &secretInit)
 	: first(firstInit), last(lastInit), nick(nickInit), phone(phoneInit), secret(secretInit) {}
 
-	void	displayBook(int index) const
-	{
-		cout << ORANGE1 << "|" << RESET;
-		cout << ORANGE2 << BOLD << setw(10) << index << RESET;
-		cout << ORANGE1 << "|";
-        cout << setw(10) << first.substr(0, 9) << "|";
-        cout << setw(10) << last.substr(0, 9) << "|";
-        cout << setw(10) << nick.substr(0, 9) << "|" << RESET << endl;
-	}
+void displayBook(int index) const
+{
+    cout << ORANGE1 << "|" << RESET;
+    cout << ORANGE2 << BOLD << setw(10) << right << index << RESET;
+    cout << ORANGE1 << "|";
+    cout << setw(10) << right << (first.length() > 9 ? first.substr(0, 9) + '.' : first) << "|";
+    cout << setw(10) << right << (last.length() > 9 ? last.substr(0, 9) + '.' : last) << "|";
+    cout << setw(10) << right << (nick.length() > 9 ? nick.substr(0, 9) + '.' : nick) << "|" << RESET << endl;
+}
+
 
 	void displayDetails(void) const
 	{
@@ -115,9 +116,15 @@ public:
 		cout << ORANGE1 << "+===============[" << RESET;
 		cout << ORANGE2 << BOLD << "SEARCHING" << RESET;
 		cout << ORANGE1 << "]=================+" << endl;
-		cout << "|:" << RESET;
-		cout << ORANGE2 << BOLD << ".........................................";
-		cout << ORANGE1 << ":|" << RESET << endl;
+		cout << "|:..";
+		cout << ORANGE2 << BOLD << "INDEX"<< RESET;
+		cout << ORANGE1 << "..|.." << RESET;
+		cout << ORANGE2 << BOLD << "FIRSTn";
+		cout << ORANGE1 << "..|..." << RESET;
+		cout << ORANGE2 << BOLD << "LAST" << RESET;
+		cout << ORANGE1 << "...|..." << RESET;
+		cout << ORANGE2 << BOLD << "NICK" << RESET ;
+		cout << ORANGE1 "..:|" << RESET << endl;
         for (int i = 0; i < index; ++i)
 			tab[i].displayBook(i);
 		cout << ORANGE1 << "+___________________________________________+" << RESET << endl;
