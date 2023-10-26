@@ -6,7 +6,7 @@
 /*   By: phudyka <phudyka@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 12:03:09 by phudyka           #+#    #+#             */
-/*   Updated: 2023/10/26 17:06:16 by phudyka          ###   ########.fr       */
+/*   Updated: 2023/10/26 18:11:59 by phudyka          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,8 @@ int	ft_secret(string &secret)
 	cout << PURPLE << BOLD << " *Darkest Secret*" << RESET;
 	cout << ORANGE1 << ": " << RESET;
 	getline(cin, secret);
-	cout << ORANGE1 << "+===========[contact added]===========+" << RESET << endl;
+	cout << ORANGE1 << "+_____________[" << RESET;
+	cout << ORANGE2 << "contact  added" << RESET;
+	cout << ORANGE1 << "]______________+" << RESET << endl;
 	return (1);
 }

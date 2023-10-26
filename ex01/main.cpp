@@ -6,13 +6,13 @@
 /*   By: phudyka <phudyka@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 13:13:34 by phudyka           #+#    #+#             */
-/*   Updated: 2023/10/26 17:04:06 by phudyka          ###   ########.fr       */
+/*   Updated: 2023/10/26 18:08:02 by phudyka          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "main.hpp"
 
-static void	ft_add(PhoneBook phonebook)
+static void	ft_add(PhoneBook &phonebook)
 {
 	string	first;
 	string	last;
@@ -22,7 +22,9 @@ static void	ft_add(PhoneBook phonebook)
 
 	while (true)
 	{
-		cout << ORANGE1 << "+===============[ADD]================+" << endl;
+		cout << ORANGE1 << "+==================[" << RESET;
+		cout << ORANGE2 << BOLD << "ADD" << RESET;
+		cout << ORANGE1 << "]====================+" << RESET << endl;
 		if (ft_name(first, last, nick) && ft_phone(phone) && ft_secret(secret))
 			break ;
 	}
@@ -30,7 +32,7 @@ static void	ft_add(PhoneBook phonebook)
 	phonebook.addContact(newContact);
 }
 
-static void	ft_search(PhoneBook phonebook)
+static void	ft_search(PhoneBook &phonebook)
 {
     int		index;
     string	userInput;

@@ -6,7 +6,7 @@
 /*   By: phudyka <phudyka@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 15:33:57 by phudyka           #+#    #+#             */
-/*   Updated: 2023/10/26 16:44:05 by phudyka          ###   ########.fr       */
+/*   Updated: 2023/10/26 18:14:12 by phudyka          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,27 +14,27 @@
 
 void	ft_awesome(void)
 {
-	cout << ORANGE1 << "+====================================+" << endl;
-	cout << "|       ┳┳┓    ┏┓                    |" << endl;
-	cout << "|       ┃┃┃┓┏  ┣┫┓┏┏┏┓┏┏┓┏┳┓┏┓       |" << endl;
-	cout << "|       ┛ ┗┗┫  ┛┗┗┻┛┗ ┛┗┛┛┗┗┗        |" << endl;
-	cout << "|         ┏┓┓       ┳┓    ┓          |" << endl;
-	cout << "|         ┃┃┣┓┏┓┏┓┏┓┣┫┏┓┏┓┃┏         |" << endl;
-	cout << "|         ┣┛┛┗┗┛┛┗┗ ┻┛┗┛┗┛┛┗         |" << endl;
-	cout << "+____________________________________+" << endl;
-	cout << "|...........: ";
+	cout << ORANGE1 << "+===========================================+" << endl;
+	cout << "|          ┳┳┓    ┏┓                        |" << endl;
+	cout << "|          ┃┃┃┓┏  ┣┫┓┏┏┏┓┏┏┓┏┳┓┏┓           |" << endl;
+	cout << "|          ┛ ┗┗┫  ┛┗┗┻┛┗ ┛┗┛┛┗┗┗            |" << endl;
+	cout << "|            ┏┓┓       ┳┓    ┓              |" << endl;
+	cout << "|            ┃┃┣┓┏┓┏┓┏┓┣┫┏┓┏┓┃┏             |" << endl;
+	cout << "|            ┣┛┛┗┗┛┛┗┗ ┻┛┗┛┗┛┛┗             |" << endl;
+	cout << "+___________________________________________+" << endl;
+	cout << "|...............: ";
 	cout << BOLD << ORANGE2 << "COMMANDS"<< RESET ;
-	cout << ORANGE1 << " :.............|" << endl;
+	cout << ORANGE1 << " :................|" << endl;
 	cout << "|.:" << RESET;
 	cout << ORANGE2 << BOLD << "ADD" << RESET;
-	cout << ORANGE1 << "      .to add up to 8 users.   |" << endl;
+	cout << ORANGE1 << "      .to add up to 8 users.          |" << endl;
 	cout << "|.:"<< RESET;
 	cout << ORANGE2 << BOLD << "SEARCH" << RESET;
-	cout << ORANGE1 "   .to search for a user.   |" << endl;
+	cout << ORANGE1 "   .to search for a user.          |" << endl;
 	cout << "|.:" << RESET ;
 	cout << ORANGE2 << BOLD << "EXIT" << RESET;
-	cout << ORANGE1 << "     .to exit.                |" << endl;
-	cout << "+====================================+" << RESET << endl;
+	cout << ORANGE1 << "     .to exit.                       |" << endl;
+	cout << "+===========================================+" << RESET << endl;
 }
 
 void ft_error(int code)
@@ -43,28 +43,28 @@ void ft_error(int code)
     {
 		case 1:
 			cout << ORANGE1 << "|.:";
-			cout << BOLD << RED << "     .:[INVALID  COMMAND]:.     " << RESET;
+			cout << BOLD << RED << "        .:[INVALID   COMMAND]:.        " << RESET;
 			cout << ORANGE1 << ":.|" << RESET << endl;
 			break ;
 		case 2:
         	cout << ORANGE1 << "|.:";
-        	cout << BOLD << RED << "      .:[ INVALID INDEX ]:.      " << RESET;
+        	cout << BOLD << RED << "         .:[ INVALID  INDEX ]:.         " << RESET;
         	cout << ORANGE1 << ":.|" << endl;
-        	cout << "+====================================+" << RESET << endl;
+        	cout << "+____________________________________+" << RESET << endl;
         	break ;
     	case 3:
         	cout << ORANGE1 << "|.:";
-        	cout << BOLD << RED << "      .:[  CHARS  ONLY  ]:.        " << RESET;
+        	cout << BOLD << RED << "          .:[  CHARS ONLY ]:.          " << RESET;
         	cout << ORANGE1 << ":.|" << RESET << endl;
         	break ;
     	case 4:
         	cout << ORANGE1 << "|.:";
-        	cout << BOLD << RED << "       .:[ DIGITS  ONLY ]:.       " << RESET;
+        	cout << BOLD << RED << "          .:[ DIGITS ONLY ]:.          " << RESET;
         	cout << ORANGE1 << ":.|" << RESET << endl;
         	break ;
     	case 5:
         	cout << ORANGE1 << "|.:";
-        	cout << BOLD << RED << "      .:[INVALID  LENGTH]:.     " << RESET;
+        	cout << BOLD << RED << "          .:[ INVALID LEN ]:.          " << RESET;
         	cout << ORANGE1 << ":.|" << RESET << endl;
         	break;
     	default:
@@ -80,8 +80,8 @@ void	ft_command(void)
 
 void	ft_exit(void)
 {
-	cout << ORANGE1 << "|.:      " << RESET;
-	cout << BOLD << RED << ".:Exiting  program:." << RESET;
-	cout << ORANGE1 << "      :.|" << endl;
-	cout << "+====================================+" << RESET << endl;
+	cout << ORANGE1 << "|.:           " << RESET;
+	cout << BOLD << RED << ".:Exiting program:." << RESET;
+	cout << ORANGE1 << "         :.|" << endl;
+	cout << "+___________________________________________+" << RESET << endl;
 }
