@@ -6,7 +6,7 @@
 /*   By: phudyka <phudyka@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 15:33:57 by phudyka           #+#    #+#             */
-/*   Updated: 2023/10/26 15:32:08 by phudyka          ###   ########.fr       */
+/*   Updated: 2023/10/26 16:44:05 by phudyka          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,33 +37,39 @@ void	ft_awesome(void)
 	cout << "+====================================+" << RESET << endl;
 }
 
-void	ft_error(int code)
+void ft_error(int code)
 {
-	if (code == 1)
-	{
-		cout << ORANGE1 << "|.:" << RESET;
-		cout << BOLD << RED << "      .:[INVALID COMMAND]:.     " << RESET;
-		cout << ORANGE1 << ":.|" << RESET << endl;
-	}
-	else if (code == 2)
-	{
-		cout << ORANGE1 << "|.:" << RESET;
-		cout << BOLD << RED << "       .:[INVALID INDEX]:.      " << RESET;
-		cout << ORANGE1 << ":.|" << RESET << endl;
-	}
-	else if (code == 3)
-	{
-		cout << ORANGE1 << "|.:" << RESET;
-		cout << BOLD << RED << "        .:[CHARS  ONLY]:.       " << RESET;
-		cout << ORANGE1 << ":.|" << RESET << endl;
-	}
-	else if (code == 4)
-	{
-		cout << ORANGE1 << "|.:" << RESET;
-		cout << BOLD << RED << "        .:[DIGITS ONLY]:.       " << RESET;
-		cout << ORANGE1 << ":.|" << RESET << endl;
-	}
-	return ;
+    switch (code)
+    {
+		case 1:
+			cout << ORANGE1 << "|.:";
+			cout << BOLD << RED << "     .:[INVALID  COMMAND]:.     " << RESET;
+			cout << ORANGE1 << ":.|" << RESET << endl;
+			break ;
+		case 2:
+        	cout << ORANGE1 << "|.:";
+        	cout << BOLD << RED << "      .:[ INVALID INDEX ]:.      " << RESET;
+        	cout << ORANGE1 << ":.|" << endl;
+        	cout << "+====================================+" << RESET << endl;
+        	break ;
+    	case 3:
+        	cout << ORANGE1 << "|.:";
+        	cout << BOLD << RED << "      .:[  CHARS  ONLY  ]:.        " << RESET;
+        	cout << ORANGE1 << ":.|" << RESET << endl;
+        	break ;
+    	case 4:
+        	cout << ORANGE1 << "|.:";
+        	cout << BOLD << RED << "       .:[ DIGITS  ONLY ]:.       " << RESET;
+        	cout << ORANGE1 << ":.|" << RESET << endl;
+        	break ;
+    	case 5:
+        	cout << ORANGE1 << "|.:";
+        	cout << BOLD << RED << "      .:[INVALID  LENGTH]:.     " << RESET;
+        	cout << ORANGE1 << ":.|" << RESET << endl;
+        	break;
+    	default:
+        	break ;
+    }
 }
 
 void	ft_command(void)

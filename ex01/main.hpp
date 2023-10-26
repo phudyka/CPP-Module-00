@@ -6,7 +6,7 @@
 /*   By: phudyka <phudyka@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 13:22:30 by phudyka           #+#    #+#             */
-/*   Updated: 2023/10/26 15:16:51 by phudyka          ###   ########.fr       */
+/*   Updated: 2023/10/26 16:51:34 by phudyka          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,11 +28,13 @@
 
 using namespace std;
 
+const string	num = "0123456789";
+
 void	ft_awesome(void);
 void	ft_command(void);
-int		ft_name(string first, string last, string nick);
-int		ft_phone(string phone);
-int		ft_secret(string secret);
+int		ft_name(string &first, string &last, string &nick);
+int		ft_phone(string &phone);
+int		ft_secret(string &secret);
 void	ft_error(int code);
 void	ft_exit(void);
 class Contact
@@ -74,7 +76,7 @@ public:
 	   cout << ORANGE1 << ".:" << RESET;
 	   cout << ORANGE2 << BOLD << "Phone Number" << RESET;
 	   cout << ORANGE1 << ": " << phone << endl;
-	   cout << ".:" << BOLD << PURPLE << "Darkest Secret" << RESET << ": " << secret << endl;
+	   cout << ".:" << BOLD << PURPLE << "*Darkest Secret*" << RESET << ": " << secret << endl;
 	   cout << ".:" << RESET << endl;
 	}
 
@@ -112,7 +114,7 @@ public:
 		cout <<  ORANGE1 << ":" << "|" << RESET << endl;
         for (int i = 0; i < index; ++i)
 			tab[i].displayBook(i);
-		cout << ORANGE1 << "+====================================+" << RESET << endl;
+		cout << ORANGE1 << "+____________________________________+" << RESET << endl;
     }
 
     void	searchContact(int i) const

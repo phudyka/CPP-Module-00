@@ -6,15 +6,13 @@
 /*   By: phudyka <phudyka@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 12:03:09 by phudyka           #+#    #+#             */
-/*   Updated: 2023/10/26 15:42:45 by phudyka          ###   ########.fr       */
+/*   Updated: 2023/10/26 17:06:16 by phudyka          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "main.hpp"
 
-const string	num = "0123456789";
-
-int	ft_name(string first, string last, string nick)
+int	ft_name(string &first, string &last, string &nick)
 {
 	while (first.empty() || first.find_first_of(num) != string::npos)
     {
@@ -41,24 +39,25 @@ int	ft_name(string first, string last, string nick)
 	return (1);
 }
 
-int	ft_phone(string phone)
+int	ft_phone(string &phone)
 {
-    while (phone.empty() || phone.find_first_not_of(num) != string::npos)
+    while (phone.empty() || phone.find_first_not_of(num)!= string::npos || phone.length() < 10)
     {
         cout << ORANGE1 << "|.:Enter a ";
 		cout << BOLD << ORANGE2 << "Phone Number: " << RESET;
         getline(cin, phone);
         if (phone.find_first_not_of(num) != string::npos)
 			ft_error(4);
-	
+		if (phone.length() < 10)
+			ft_error(5);	
     }
 	return (1);
 }
 
-int	ft_secret(string secret)
+int	ft_secret(string &secret)
 {
 	cout << ORANGE1 << "|.:Enter your" << RESET;
-	cout << PURPLE << BOLD << " Darkest Secret" << RESET;
+	cout << PURPLE << BOLD << " *Darkest Secret*" << RESET;
 	cout << ORANGE1 << ": " << RESET;
 	getline(cin, secret);
 	cout << ORANGE1 << "+===========[contact added]===========+" << RESET << endl;

@@ -6,7 +6,7 @@
 /*   By: phudyka <phudyka@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 13:13:34 by phudyka           #+#    #+#             */
-/*   Updated: 2023/10/26 15:39:39 by phudyka          ###   ########.fr       */
+/*   Updated: 2023/10/26 17:04:06 by phudyka          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,29 +32,28 @@ static void	ft_add(PhoneBook phonebook)
 
 static void	ft_search(PhoneBook phonebook)
 {
-	int		index;
-	string	userInput;
+    int		index;
+    string	userInput;
 
-	phonebook.displayTab();
-	while (userInput.empty() || userInput.find_first_not_of("0123456789") != string::npos)
+    phonebook.displayTab();
+    while (userInput.empty() || userInput.find_first_not_of(num) != string::npos)
     {
-		cout << ORANGE1 << "|.:Enter a " << RESET;
-		cout << ORANGE2 << BOLD "Contact Index";
-		cout << ": " << RESET;
-		cin >> index;
-		getline(cin, userInput);
-		stringstream ss(userInput);
-        if (userInput.find_first_not_of("0123456789") != string::npos)
-           ft_error(4);
-		else if (ss >> index)
-			phonebook.searchContact(index);
-		else
-		{
-			ft_error(2);
-			return ;
-		}
+        cout << ORANGE1 << "|.:Enter a " << RESET;
+        cout << BOLD << ORANGE2 << "Contact Index" << RESET;
+        cout << ": " << RESET;
+        getline(cin, userInput);
+        stringstream ss(userInput);
+        if (userInput.find_first_not_of(num) != string::npos)
+            ft_error(4);
+        else if (ss >> index)
+            phonebook.searchContact(index);
+        else
+        {
+            ft_error(2);
+            return;
+        }
     }
-	return ;
+    return;
 }
 
 int	main(int argc, char **argv)
@@ -79,6 +78,8 @@ int	main(int argc, char **argv)
 				ft_exit();
 				break ;
 			}
+			else if (userInput.empty())
+				continue ;
 			else
 				ft_error(1);
 		}
