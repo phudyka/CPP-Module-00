@@ -6,7 +6,7 @@
 /*   By: phudyka <phudyka@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 13:22:30 by phudyka           #+#    #+#             */
-/*   Updated: 2023/10/26 18:41:32 by phudyka          ###   ########.fr       */
+/*   Updated: 2023/10/27 09:35:18 by phudyka          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,7 +107,7 @@ public:
 		{
 			for (int i = 0; i < 7; ++i)
 				tab[i] = tab[i + 1];
-			tab[0] = newContact;
+			tab[7] = newContact;
         }
     }
 

@@ -6,7 +6,7 @@
 /*   By: phudyka <phudyka@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 15:33:57 by phudyka           #+#    #+#             */
-/*   Updated: 2023/10/26 18:26:00 by phudyka          ###   ########.fr       */
+/*   Updated: 2023/10/27 09:38:43 by phudyka          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ void ft_error(int code)
         	cout << ORANGE1 << "|.:";
         	cout << BOLD << RED << "           .:[INVALID INDEX]:.         " << RESET;
         	cout << ORANGE1 << ":.|" << endl;
-        	cout << "+____________________________________+" << RESET << endl;
+        	cout << "+___________________________________________+" << RESET << endl;
         	break ;
     	case 3:
         	cout << ORANGE1 << "|.:";
