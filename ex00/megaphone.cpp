@@ -1,23 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ex00.cpp                                           :+:      :+:    :+:   */
+/*   megaphone.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: phudyka <phudyka@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 11:48:54 by phudyka           #+#    #+#             */
-/*   Updated: 2023/10/23 13:10:17 by phudyka          ###   ########.fr       */
+/*   Updated: 2023/10/30 17:19:05 by phudyka          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string>
 #include <iostream>
 
-using namespace std;
-
 int	main(int argc, char **argv)
 {
-	string	caps;
+	std::string	caps;
 
 	if (argc > 1)
 	{
@@ -26,12 +24,12 @@ int	main(int argc, char **argv)
 				for(int j = 0; argv[i][j]; j++)
 				{
 					caps = toupper(argv[i][j]);
-					cout << caps;
+					std::cout << caps;
 				}
 			}
-		cout << endl;
+		std::cout << std::endl;
 	}
 	else
-		cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << endl;
+		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
 	return (0);
 }
